@@ -1,3 +1,4 @@
+import csv
 """
 
 Домашнее задание №2
@@ -10,12 +11,22 @@
 
 """
 
+
 def main():
     """
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-    pass
+
+
+
+
+    with open('users.csv', 'r', encoding='utf-8') as f:
+        fields = ['name', 'age', 'job']
+        reader = csv.DictReader(f, fields, delimiter=';')
+        for row in reader:
+            print(row)
+
 
 if __name__ == "__main__":
     main()
